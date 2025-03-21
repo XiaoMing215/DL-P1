@@ -27,10 +27,11 @@ int locationZero(const string& board){
 
 int BFS(const string& board){//返回步数
     queue<pair<string,int>> q;
-    map<string,int> visited;//记录该状态是否已存在
+    // map<string,int> visited;//记录该状态是否已存在
+    set<string> visited;
     
     q.push({board,0});
-    visited[board] = 0;
+    visited.insert(board);
 
     while (!q.empty())
     {
@@ -55,7 +56,7 @@ int BFS(const string& board){//返回步数
                 if (!visited.count(newboard))
                 {
                     q.push({newboard,step+1});
-                    visited[newboard] = step+1;
+                    visited.insert(newboard);
                 }
             }
         }
