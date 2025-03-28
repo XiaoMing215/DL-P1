@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
-#include<set>
+#include<unordered_set>
 #include<unordered_map>
 #include<queue>
  
@@ -31,7 +31,7 @@ vector<pair<int,int>> direction= {{1,0},{0,1},{-1,0},{0,-1}};//可能的每一�
 int BFS(const string& board){//返回步数
     queue<pair<string,int>> q;
     // map<string,int> visited;//记录该状态是否已存在
-    set<string> visited;
+    unordered_set<string> visited;
     
     q.push({board,0});
     visited.insert(board);
